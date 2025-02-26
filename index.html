@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap"
       rel="stylesheet"
     />
+
     <style>
       body {
         background-color: #0d0d0d;
@@ -33,7 +34,8 @@
         width: 70%;
         display: flex;
         align-items: center;
-        flex-direction: column;
+        justify-content: center;
+        flex-direction: row;
       }
       h1 {
         font-size: 3rem;
@@ -48,12 +50,6 @@
         margin-left: 60px;
         align-items: center;
         justify-content: center;
-      }
-      .links {
-        max-height: 300px;
-        overflow-y: auto;
-        padding-right: 1rem;
-        text-align: left;
       }
       ul {
         list-style-type: none;
@@ -76,28 +72,22 @@
       a:hover {
         opacity: 0.7;
       }
-      .controls {
-        position: fixed;
-        right: 100px;
-        top: 50px;
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        margin-bottom: 1rem;
-      }
       button {
         border: none;
         border: 1px solid #e9eaeb;
-        background-color: #0d0d0d;
-        margin-left: 5px;
-        color: #e9eaeb;
-        padding: 0.5rem 1rem;
+        background-color: #e9eaeb;
+        color: #0d0d0d;
+        padding: 0.2rem 0.5rem;
+        margin-left: 20px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        font-family: "Roboto Mono", monospace;
+        font-weight: 100;
+        /* font-family: "Roboto Mono"; */
+        font-size: 1.5em;
       }
       button:hover {
-        background-color: #555;
+        background-color: #0d0d0d;
+        color: #e9eaeb;
       }
       .letter-nav {
         display: flex;
@@ -107,11 +97,6 @@
         margin-top: 1rem;
         width: 50%;
       }
-      .letter-nav button {
-        margin: 0.2rem;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.8rem;
-      }
       @media (max-width: 600px) {
         h1 {
           font-size: 2rem;
@@ -119,72 +104,101 @@
         .container {
           width: 70%;
         }
-        .controls {
-          right: 20px;
-          top: 20px;
-        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div>
-        <h1>rhizomant</h1>
-      </div>
-      <div class="controls">
-        <!-- <button id="randomLink">random</button> -->
-      </div>
-      <div class="content">
-        <div class="links" id="linkContainer">
-          <ul id="artistList">
-            <!-- <li><a href="#artist1">Aaron Abebe</a></li> -->
-          </ul>
-        </div>
-      </div>
-      <div class="letter-nav" id="letterNav" style="display: none"></div>
+      <h1>rhizomant</h1>
+      <button id="randomLink">→</button>
+      <!-- <div class="content"> -->
+      <!--   <div class="links" id="linkContainer"> -->
+      <!--     <ul id="artistList"> -->
+      <!--       <li> -->
+      <!--         <a href="https://jigsawbeggars.bandcamp.com/track/rhizomant"> -->
+      <!--           Jigsaw Beggars -->
+      <!--         </a> -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <a href="https://aaronabebe.bandcamp.com/track/rhizomant"> -->
+      <!--           Aaron Abebe -->
+      <!--         </a> -->
+      <!--       </li> -->
+      <!--       <li><a href="https://4gre.org/rhizomant">Cyrus Pireh</a></li> -->
+      <!--       <li> -->
+      <!--         <a href="https://www.instagram.com/p/DGaNBKWM2Fk/"> -->
+      <!--           Anna Gabriele -->
+      <!--         </a> -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <a href="https://www.instagram.com/sonnisuper/">Sonja Kuzmics</a> -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <a -->
+      <!--           href="https://www.instagram.com/p/DGabiX1sEJG/?igsh=OGdqeTJiYXR6enJs" -->
+      <!--           >Zanbephela</a -->
+      <!--         > -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <a -->
+      <!--           href="https://vanmojoandtheponystressensemble.bandcamp.com/album/rhizomant" -->
+      <!--           >Van Mojo and the Ponystress Ensemble</a -->
+      <!--         > -->
+      <!--       </li> -->
+      <!--       <li><a href="#artist1">David Piper</a></li> -->
+      <!--       <li> -->
+      <!--         <a -->
+      <!--           href="https://www.instagram.com/p/DGagEFii9fl/?igsh=eGZncmhhZzBkNmp3" -->
+      <!--           >Martin Albler</a -->
+      <!--         > -->
+      <!--       </li> -->
+      <!--       <li><a href="https://youtu.be/7jN68pr9XHA">Lateness</a></li> -->
+      <!--       <li> -->
+      <!--         <a href="https://youtu.be/C9amc5groTI?si=Te3kVyLbs7z5kVji" -->
+      <!--           >Breitband</a -->
+      <!--         > -->
+      <!--       </li> -->
+      <!--       <li> -->
+      <!--         <a -->
+      <!--           href="https://www.instagram.com/p/DGiPghNMlfy/?igsh=cW04amt3OWx0ZmV3" -->
+      <!--         > -->
+      <!--           @spacegirlescapism / @lafeuilleflottante -->
+      <!--         </a> -->
+      <!--       </li> -->
+      <!--     </ul> -->
+      <!--   </div> -->
+      <!-- </div> -->
     </div>
 
     <script>
-      const artistList = document.getElementById("artistList");
-      const linkContainer = document.getElementById("linkContainer");
-      const letterNav = document.getElementById("letterNav");
+      let links = [
+        "https://jigsawbeggars.bandcamp.com/track/rhizomant",
+        "https://aaronabebe.bandcamp.com/track/rhizomant",
+        "https://4gre.org/rhizomant",
+        "https://www.instagram.com/p/DGaNBKWM2Fk/",
+        "https://www.instagram.com/sonnisuper/",
+        "https://www.instagram.com/p/DGabiX1sEJG/?igsh=OGdqeTJiYXR6enJs",
+        "https://vanmojoandtheponystressensemble.bandcamp.com/album/rhizomant",
+        "https://www.instagram.com/p/DGagEFii9fl/?igsh=eGZncmhhZzBkNmp3",
+        "https://youtu.be/7jN68pr9XHA",
+        "https://youtu.be/C9amc5groTI?si=Te3kVyLbs7z5kVji",
+        "https://www.instagram.com/p/DGiPghNMlfy/?igsh=cW04amt3OWx0ZmV3",
+        // TODO
+        // "#artist1", DAVID PIPER???!!!?!?!
+        // anna dian
+        // jonas prohaska
+        // jonas biesenbender
+        // andor sipos
+        // paul wurm
+        // tobias haller
+      ];
       const randomLinkBtn = document.getElementById("randomLink");
-      const togglePaginationBtn = document.getElementById("togglePagination");
-
-      let isPaginated = false;
-
-      // Generate letter navigation
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").forEach((letter) => {
-        const button = document.createElement("button");
-        button.textContent = letter;
-        button.addEventListener("click", () => filterByLetter(letter));
-        letterNav.appendChild(button);
-      });
-
-      function filterByLetter(letter) {
-        const artists = Array.from(artistList.children);
-        artists.forEach((artist) => {
-          const artistName = artist.textContent.trim();
-          artist.style.display = artistName.startsWith(letter) ? "" : "none";
-        });
-      }
-
-      function showAllArtists() {
-        Array.from(artistList.children).forEach(
-          (artist) => (artist.style.display = ""),
-        );
-      }
-
-      togglePaginationBtn.addEventListener("click", () => {
-        isPaginated = !isPaginated;
-        letterNav.style.display = isPaginated ? "flex" : "none";
-        showAllArtists();
-      });
 
       randomLinkBtn.addEventListener("click", () => {
-        const links = Array.from(artistList.getElementsByTagName("a"));
         const randomLink = links[Math.floor(Math.random() * links.length)];
-        randomLink.click();
+        links = links.filter((l) => l !== randomLink);
+        console.log(links);
+        window.open(randomLink, "_blank").focus();
       });
     </script>
   </body>

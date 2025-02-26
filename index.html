@@ -171,7 +171,7 @@
     </div>
 
     <script>
-      let links = [
+      const origLinks = [
         "https://jigsawbeggars.bandcamp.com/track/rhizomant",
         "https://aaronabebe.bandcamp.com/track/rhizomant",
         "https://4gre.org/rhizomant",
@@ -192,12 +192,15 @@
         // paul wurm
         // tobias haller
       ];
+      let links = [...origLinks];
       const randomLinkBtn = document.getElementById("randomLink");
 
       randomLinkBtn.addEventListener("click", () => {
         const randomLink = links[Math.floor(Math.random() * links.length)];
         links = links.filter((l) => l !== randomLink);
-        console.log(links);
+        if (links.length === 0) {
+          links = [...origLinks];
+        }
         window.open(randomLink, "_blank").focus();
       });
     </script>
